@@ -5,7 +5,15 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>NEXTDOM | Contact</title>
   <meta name="description" content="Neem contact op met NEXTDOM voor een gerichte Flat Pack offerteaanvraag in Nederland." />
+  <meta property="og:title" content="NEXTDOM | Contact" />
+  <meta property="og:description" content="Stuur je projectgegevens en ontvang een gerichte vervolgreactie van NEXTDOM." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://nextdom.nl/contact" />
+  <meta property="og:image" content="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1600&q=80" />
   <link rel="canonical" href="https://nextdom.nl/contact" />
+  <link rel="alternate" hreflang="nl" href="contact.html?lang=nl" />
+  <link rel="alternate" hreflang="en" href="contact.html?lang=en" />
+  <link rel="alternate" hreflang="x-default" href="contact.html?lang=nl" />
   <link rel="stylesheet" href="assets/styles.css" />
 </head>
 <body>
@@ -31,7 +39,7 @@
         <div class="grid-3">
           <div><label data-i18n="f1" for="name"></label><input id="name" required name="name" autocomplete="name"></div>
           <div><label data-i18n="f2" for="email"></label><input id="email" required type="email" name="email" autocomplete="email"></div>
-          <div><label data-i18n="f3" for="phone"></label><input id="phone" required name="phone" autocomplete="tel"></div>
+          <div><label data-i18n="f3" for="phone"></label><input id="phone" type="tel" required name="phone" autocomplete="tel"></div>
         </div>
 
         <div class="grid-3">
@@ -42,10 +50,10 @@
 
         <div><label data-i18n="f7" for="plannedSize"></label><input id="plannedSize" name="plannedSize" required placeholder="e.g. 70 m²"></div>
         <div><label data-i18n="f8" for="message"></label><textarea id="message" rows="5" name="message" required></textarea></div>
-        <div class="small"><input id="privacy" type="checkbox" required> <label for="privacy" style="display:inline;font-weight:400" data-i18n="privacy"></label></div>
+        <div class="small"><input id="privacy" type="checkbox" name="privacyConsent" value="yes" required> <label for="privacy" style="display:inline;font-weight:400" data-i18n="privacy"></label></div>
 
         <button class="btn primary" type="submit" data-track="lead_submit" data-i18n="send"></button>
-        <p id="form-success" class="notice" tabindex="-1" hidden data-i18n="success"></p>
+        <p id="form-success" class="notice" tabindex="-1" aria-live="polite" hidden data-i18n="success"></p>
       </form>
     </article>
   </div>
@@ -117,8 +125,8 @@ window.PAGE_I18N = {
     en: 'Send inquiry'
   },
   success: {
-    nl: 'Bedankt. Je aanvraag is ontvangen. Dit is een oriëntatieaanvraag; we nemen contact op met een verfijnd voorstel.',
-    en: 'Thank you. Your inquiry has been received. This is an orientation request; we will follow up with a refined proposal.'
+    nl: 'Bedankt. Demo-verzending gelukt in de browser. Koppel vóór livegang een echte backend of CRM-endpoint om leads echt te ontvangen.',
+    en: 'Thank you. Demo submission completed in the browser. Connect a real backend or CRM endpoint before launch to receive leads.'
   },
   footer1: {
     nl: 'NEXTDOM is een commerciële partner voor de Nederlandse markt met systeembasis van MTB Modules.',

@@ -1,14 +1,30 @@
 (function () {
+  const allowedLangs = new Set(['nl', 'en']);
+  const getStoredLang = () => {
+    try {
+      return localStorage.getItem('nextdom-lang');
+    } catch (error) {
+      return null;
+    }
+  };
+  const setStoredLang = (value) => {
+    try {
+      localStorage.setItem('nextdom-lang', value);
+    } catch (error) {
+    }
+  };
+
   const params = new URLSearchParams(window.location.search);
-  const storedLang = localStorage.getItem('nextdom-lang');
-  const lang = params.get('lang') || storedLang || 'nl';
+  const requestedLang = params.get('lang');
+  const storedLang = getStoredLang();
+  const lang = allowedLangs.has(requestedLang) ? requestedLang : (allowedLangs.has(storedLang) ? storedLang : 'nl');
   document.documentElement.lang = lang;
-  localStorage.setItem('nextdom-lang', lang);
+  setStoredLang(lang);
 
   document.querySelectorAll('[data-lang]').forEach((btn) => {
     btn.classList.toggle('active', btn.dataset.lang === lang);
     btn.addEventListener('click', () => {
-      localStorage.setItem('nextdom-lang', btn.dataset.lang);
+      setStoredLang(btn.dataset.lang);
       const url = new URL(window.location.href);
       url.searchParams.set('lang', btn.dataset.lang);
       window.location.href = url.toString();
@@ -29,7 +45,8 @@
 
   document.querySelectorAll('[data-nav-key]').forEach((a) => {
     const key = a.dataset.navKey;
-    const name = window.NEXTDOM_CONTENT.nav[key][lang];
+    const name = window.NEXTDOM_CONTENT?.nav?.[key]?.[lang];
+    if (!name) return;
     a.textContent = name;
     const href = a.getAttribute('href').split('?')[0];
     a.href = `${href}?lang=${lang}`;
@@ -107,7 +124,7 @@
       e.preventDefault();
       if (!leadForm.reportValidity()) return;
 
-      gaTrack('lead_form_submit', { page: location.pathname });
+      gaTrack('lead_form_submit', { page: location.pathname, mode: 'frontend_only' });
       const msg = document.getElementById('form-success');
       msg.hidden = false;
       msg.focus();
