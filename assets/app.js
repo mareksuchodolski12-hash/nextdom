@@ -30,9 +30,14 @@
   });
 
   document.querySelectorAll('[data-localized-link]').forEach((a) => {
-    const href = a.getAttribute('href').split('?')[0];
-    if (href.startsWith('#')) return;
-    a.href = `${href}?lang=${lang}`;
+    const rawHref = a.getAttribute('href') || '';
+    if (!rawHref || rawHref.startsWith('#') || rawHref.startsWith('http') || rawHref.startsWith('mailto:')) return;
+
+    const [pathWithMaybeQuery, hash = ''] = rawHref.split('#');
+    const [pathOnly] = pathWithMaybeQuery.split('?');
+    const localized = `${pathOnly}?lang=${lang}`;
+
+    a.href = hash ? `${localized}#${hash}` : localized;
   });
 
   const current = location.pathname.split('/').pop() || 'index.html';
