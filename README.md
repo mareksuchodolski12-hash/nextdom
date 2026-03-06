@@ -40,11 +40,14 @@
 ## Ręczne uzupełnienia przed publikacją
 
 - Logo/brand assets (header + favicon).
+- Dane kontaktowe widoczne na `contact.html` (telefon, WhatsApp, godziny kontaktu).
 - Finalne dane kontaktowe i rejestrowe (KvK/VAT/adres).
 - Finalna polityka prywatności (`privacy.html`).
 - Finalne ceny i mnożniki w estimatorze (`assets/calculator-config.js`).
 - Finalne zdjęcia (z prawami/licencją) zamiast obecnych placeholderów/inspiracji.
 - Finalny identyfikator GA4 (`G-XXXXXXXXXX`) i ewentualny GTM snippet.
+- Realny endpoint formularza leadowego (backend/CRM/webhook) — obecnie formularz działa w trybie frontend demo.
+- Finalny obraz OG (Open Graph) pod produkcyjnym URL.
 
 ## Rekomendowane kroki przed deployem
 
@@ -54,3 +57,11 @@
 4. Podłącz realny endpoint formularza lub narzędzie CRM/webhook.
 5. Dodaj finalne `sitemap.xml` i `robots.txt` dla docelowej domeny.
 6. Wykonaj finalny test regresji: linki, CTA, estimator, schema FAQ, tracking eventów.
+
+## Uruchomienie lokalne i deploy
+
+- Projekt jest statyczny (brak build step i brak zależności runtime).
+- Do lokalnego podglądu wystarczy prosty serwer statyczny, np.:
+  - `python -m http.server 8080`
+  - albo dowolny static server w IDE/hostingu.
+- Gotowy do hostingu typu GitHub Pages / Netlify / Vercel Static po podmianie wszystkich placeholderów produkcyjnych.
