@@ -34,13 +34,20 @@
     const href = a.getAttribute('href').split('?')[0];
     a.href = `${href}?lang=${lang}`;
   });
+
   document.querySelectorAll('[data-localized-link]').forEach((a) => {
-    const href = a.getAttribute('href').split('?')[0];
-    a.href = `${href}?lang=${lang}`;
+    const rawHref = a.getAttribute('href') || '';
+    if (!rawHref || rawHref.startsWith('#') || rawHref.startsWith('http') || rawHref.startsWith('mailto:')) return;
+
+    const [pathWithMaybeQuery, hash = ''] = rawHref.split('#');
+    const [pathOnly] = pathWithMaybeQuery.split('?');
+    const localized = `${pathOnly}?lang=${lang}`;
+
+    a.href = hash ? `${localized}#${hash}` : localized;
   });
 
   const current = location.pathname.split('/').pop() || 'index.html';
-  document.querySelectorAll('nav a').forEach(a => {
+  document.querySelectorAll('nav a').forEach((a) => {
     if (a.getAttribute('href').includes(current)) a.classList.add('active');
   });
 
@@ -58,6 +65,8 @@
   if (calc && window.NEXTDOM_CALCULATOR_CONFIG) {
     calc.addEventListener('submit', (e) => {
       e.preventDefault();
+      if (!calc.reportValidity()) return;
+
       const c = window.NEXTDOM_CALCULATOR_CONFIG;
       const data = new FormData(calc);
       const type = data.get('houseType');
@@ -67,7 +76,7 @@
       const country = data.get('country');
       const selectedExtras = data.getAll('extras');
 
-      const sizeBand = c.sizeFactor.find(b => size <= b.max) || c.sizeFactor[c.sizeFactor.length - 1];
+      const sizeBand = c.sizeFactor.find((b) => size <= b.max) || c.sizeFactor[c.sizeFactor.length - 1];
       const base = c.basePriceByType[type] || c.basePriceByType.custom;
       const modelAdj = c.modelAdjustments[model] || 0;
       const extras = selectedExtras.reduce((sum, item) => sum + (c.extras[item] || 0), 0);
@@ -78,10 +87,17 @@
       const low = Math.round(estimate * 0.92);
       const high = Math.round(estimate * 1.1);
 
-      const format = (n) => new Intl.NumberFormat(lang === 'nl' ? 'nl-NL' : 'en-GB', { style: 'currency', currency: c.currency, maximumFractionDigits: 0 }).format(n);
+      const format = (n) => new Intl.NumberFormat(lang === 'nl' ? 'nl-NL' : 'en-GB', {
+        style: 'currency',
+        currency: c.currency,
+        maximumFractionDigits: 0
+      }).format(n);
+
       document.getElementById('estimator-result').textContent = `${format(low)} – ${format(high)}`;
       document.getElementById('estimator-disclaimer').textContent = c.disclaimer[lang];
-      gaTrack('estimator_used', { houseType: type, package: pkg, country });
+      document.getElementById('estimator-followup').hidden = false;
+
+      gaTrack('estimator_used', { houseType: type, package: pkg, country, model });
     });
   }
 
@@ -89,9 +105,12 @@
   if (leadForm) {
     leadForm.addEventListener('submit', (e) => {
       e.preventDefault();
+      if (!leadForm.reportValidity()) return;
+
       gaTrack('lead_form_submit', { page: location.pathname });
       const msg = document.getElementById('form-success');
       msg.hidden = false;
+      msg.focus();
       leadForm.reset();
     });
   }
