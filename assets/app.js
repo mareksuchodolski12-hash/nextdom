@@ -21,6 +21,12 @@
     if (dict && dict[lang]) el.textContent = dict[lang];
   });
 
+  document.querySelectorAll('[data-i18n-html]').forEach((el) => {
+    const key = el.dataset.i18nHtml;
+    const dict = window.PAGE_I18N?.[key];
+    if (dict && dict[lang]) el.innerHTML = dict[lang];
+  });
+
   document.querySelectorAll('[data-nav-key]').forEach((a) => {
     const key = a.dataset.navKey;
     const name = window.NEXTDOM_CONTENT.nav[key][lang];
