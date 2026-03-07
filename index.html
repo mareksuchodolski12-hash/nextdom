@@ -20,7 +20,7 @@
   <script>window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-XXXXXXXXXX');</script>
   <!-- GTM placeholder: add GTM snippet here if used -->
 </head>
-<body>
+<body class="home-page">
 <header>
   <div class="container nav-wrap">
     <a class="logo" href="index.html?lang=nl">NEXTDOM<small>modular living NL</small></a>
@@ -46,12 +46,20 @@
         <span class="tag">NEXTDOM · Sales partner for NL · MTB Modules system base</span>
         <h1 data-i18n="heroTitle"></h1>
         <p class="lead" data-i18n="heroLead"></p>
+        <div class="trust-inline">
+          <div><strong data-i18n="trustPoint1"></strong></div>
+          <div><strong data-i18n="trustPoint2"></strong></div>
+          <div><strong data-i18n="trustPoint3"></strong></div>
+        </div>
         <div class="btn-row">
           <a class="btn primary" href="offer.html" data-localized-link data-track="cta_offer" data-i18n="ctaOffer"></a>
           <a class="btn" href="#estimator" data-track="cta_estimator" data-i18n="ctaEstimator"></a>
         </div>
       </div>
-      <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1600&q=80" alt="Visual impression of modern modular house architecture" />
+      <div class="hero-media">
+        <img src="assets/img-placeholder.svg" alt="Visual impression of modern modular house architecture" />
+        <div class="media-caption" data-i18n="heroCaption"></div>
+      </div>
     </div>
   </section>
 
@@ -86,9 +94,9 @@
         <a class="btn" href="offer.html" data-localized-link data-i18n="ctaOffer"></a>
       </div>
       <div class="model-grid">
-        <article class="card"><img src="https://images.unsplash.com/photo-1518780664697-55e3ad937233?auto=format&fit=crop&w=1000&q=80" alt="Compact modular house concept" /><h3>NXT-Compact 35</h3><p class="small">35 m² · compact living</p><p class="small" data-i18n="m1"></p></article>
-        <article class="card"><img src="https://images.unsplash.com/photo-1494526585095-c41746248156?auto=format&fit=crop&w=1000&q=80" alt="Family modular house concept" /><h3>NXT-Family 70</h3><p class="small">70 m² · family layout</p><p class="small" data-i18n="m2"></p></article>
-        <article class="card"><img src="https://images.unsplash.com/photo-1605276374104-dee2a0ed3cd6?auto=format&fit=crop&w=1000&q=80" alt="Mezzanine modular house concept" /><h3>NXT-Mezzanine 80</h3><p class="small">80 m² · mezzanine</p><p class="small" data-i18n="m3"></p></article>
+        <article class="card"><img src="assets/img-placeholder.svg" alt="Compact modular house concept" /><h3>NXT-Compact 35</h3><p class="small">35 m² · compact living</p><p class="small" data-i18n="m1"></p></article>
+        <article class="card"><img src="assets/img-placeholder.svg" alt="Family modular house concept" /><h3>NXT-Family 70</h3><p class="small">70 m² · family layout</p><p class="small" data-i18n="m2"></p></article>
+        <article class="card"><img src="assets/img-placeholder.svg" alt="Mezzanine modular house concept" /><h3>NXT-Mezzanine 80</h3><p class="small">80 m² · mezzanine</p><p class="small" data-i18n="m3"></p></article>
       </div>
     </div>
   </section>
@@ -98,6 +106,59 @@
       <article class="card"><h2 data-i18n="techShortTitle"></h2><p class="small" data-i18n="techShortBody"></p><a class="btn" href="technology.html" data-localized-link data-i18n="learnTech"></a></article>
       <article class="card"><h3>SIP 17,4 cm + C24</h3><p class="small">EPS80 core 15 cm + 2 x 12 mm OSB-3.</p><p class="small" data-i18n="techFact2"></p></article>
       <article class="card"><h3 data-i18n="inspoTitle"></h3><p class="small" data-i18n="inspoBody"></p><a class="btn" href="inspirations.html" data-localized-link data-i18n="viewInspo"></a></article>
+    </div>
+  </section>
+
+  <section class="tight">
+    <div class="container">
+      <div class="section-head">
+        <h2 data-i18n="materialsTitle"></h2>
+        <p class="lead" data-i18n="materialsLead"></p>
+      </div>
+      <div class="grid-4">
+        <article class="card material-card"><h3 data-i18n="mat1t"></h3><p class="small" data-i18n="mat1d"></p></article>
+        <article class="card material-card"><h3 data-i18n="mat2t"></h3><p class="small" data-i18n="mat2d"></p></article>
+        <article class="card material-card"><h3 data-i18n="mat3t"></h3><p class="small" data-i18n="mat3d"></p></article>
+        <article class="card material-card"><h3 data-i18n="mat4t"></h3><p class="small" data-i18n="mat4d"></p></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="tight">
+    <div class="container">
+      <div class="section-head">
+        <h2 data-i18n="galleryTitle"></h2>
+        <p class="lead" data-i18n="galleryLead"></p>
+      </div>
+      <div class="gallery-grid">
+        <article class="image-card">
+          <img src="assets/img-placeholder.svg" alt="Placeholder exterior reference for modular home" />
+          <div class="image-card-body"><h3 data-i18n="g1t"></h3><p class="small" data-i18n="g1d"></p></div>
+        </article>
+        <article class="image-card">
+          <img src="assets/img-placeholder.svg" alt="Placeholder interior reference for modular home" />
+          <div class="image-card-body"><h3 data-i18n="g2t"></h3><p class="small" data-i18n="g2d"></p></div>
+        </article>
+        <article class="image-card">
+          <img src="assets/img-placeholder.svg" alt="Placeholder floor plan reference" />
+          <div class="image-card-body"><h3 data-i18n="g3t"></h3><p class="small" data-i18n="g3d"></p></div>
+        </article>
+        <article class="image-card">
+          <img src="assets/img-placeholder.svg" alt="Placeholder transport reference for flat pack modules" />
+          <div class="image-card-body"><h3 data-i18n="g4t"></h3><p class="small" data-i18n="g4d"></p></div>
+        </article>
+        <article class="image-card">
+          <img src="assets/img-placeholder.svg" alt="Placeholder assembly reference for modular home" />
+          <div class="image-card-body"><h3 data-i18n="g5t"></h3><p class="small" data-i18n="g5d"></p></div>
+        </article>
+        <article class="image-card image-card-cta">
+          <div class="image-card-body">
+            <h3 data-i18n="g6t"></h3>
+            <p class="small" data-i18n="g6d"></p>
+            <a class="btn primary" href="contact.html" data-localized-link data-track="cta_gallery_contact" data-i18n="goContact"></a>
+          </div>
+        </article>
+      </div>
     </div>
   </section>
 
@@ -169,6 +230,10 @@
 window.PAGE_I18N = {
 heroTitle:{nl:'Modulair wonen voor Nederland, zonder ruis.',en:'Modular living for the Dutch market, without the noise.'},
 heroLead:{nl:'NEXTDOM begeleidt je van eerste oriëntatie naar een gerichte aanvraag. De systeembasis komt van MTB Modules; wij zijn jouw lokale commerciële partner.',en:'NEXTDOM guides you from first orientation to a focused inquiry. The system base comes from MTB Modules; we are your local commercial partner.'},
+heroCaption:{nl:'Referentiebeeld · vervangbaar door toekomstige NEXTDOM projectfoto',en:'Reference image · replaceable with future NEXTDOM project photos'},
+trustPoint1:{nl:'NL-marktfocus',en:'Dutch market focus'},
+trustPoint2:{nl:'Systeembasis MTB Modules',en:'MTB Modules system base'},
+trustPoint3:{nl:'Snelle offerteflow',en:'Fast quotation flow'},
 ctaOffer:{nl:'Bekijk aanbod',en:'View offer'},ctaEstimator:{nl:'Bereken indicatieve prijs',en:'Calculate estimate'},
 benefitsTitle:{nl:'Waarom klanten voor NEXTDOM kiezen',en:'Why clients choose NEXTDOM'},
 b1t:{nl:'Heldere productkeuze',en:'Clear product selection'},b1d:{nl:'Compact, family en mezzanine modellen met logische opties.',en:'Compact, family and mezzanine models with practical option paths.'},
@@ -188,9 +253,33 @@ techShortTitle:{nl:'Technologie in het kort',en:'Technology at a glance'},
 techShortBody:{nl:'Prefab Flat Pack elementen, stap-voor-stap montage en duidelijke scope per project.',en:'Prefabricated Flat Pack elements, step-by-step assembly and clear project scope definition.'},
 learnTech:{nl:'Naar technologie',en:'Go to technology'},
 techFact2:{nl:'Drievoudige beglazing, anti-inbraakdeur, membranen, dak en afwatering in de systeembasis.',en:'Triple glazing, anti-burglary door, membranes, roof and drainage are part of the system base.'},
+materialsTitle:{nl:'Constructie en materialen',en:'Construction and materials'},
+materialsLead:{nl:'Compact overzicht van de onderdelen die vaak in de systeembasis zitten. Definitieve scope wordt per project bevestigd.',en:'Compact overview of items often included in the system base. Final scope is confirmed per project.'},
+mat1t:{nl:'Dragende SIP-structuur',en:'Load-bearing SIP structure'},
+mat1d:{nl:'17,4 cm opbouw met EPS80 kern en OSB-3 voor hoge maatvastheid.',en:'17.4 cm build-up with EPS80 core and OSB-3 for dimensional stability.'},
+mat2t:{nl:'Buitenschil voorbereid',en:'Prepared external shell'},
+mat2d:{nl:'Dakafwerking, membranen en afwatering als basis voor snelle vervolgstappen.',en:'Roof layers, membranes and drainage as a base for faster next phases.'},
+mat3t:{nl:'Openingspakket',en:'Openings package'},
+mat3d:{nl:'Ramen/deuren met isolerende en beveiligde specificaties afhankelijk van model.',en:'Windows/doors with insulation and security specifications depending on model.'},
+mat4t:{nl:'Installatievoorbereiding',en:'Installation preparation'},
+mat4d:{nl:'Voorbereid op elektra/watertrajecten die projectspecifiek worden uitgewerkt.',en:'Prepared for electrical/plumbing routes finalized per project.'},
 inspoTitle:{nl:'Inspiraties en voorbeelden',en:'Inspiration and examples'},
 inspoBody:{nl:'Visuele referenties ter inspiratie, zonder lokale NEXTDOM realisaties te claimen.',en:'Visual references for inspiration, without claiming local NEXTDOM completions.'},
 viewInspo:{nl:'Bekijk inspiratie',en:'View inspirations'},
+galleryTitle:{nl:'Beeldzones voor jouw project',en:'Image zones for your project'},
+galleryLead:{nl:'Gebruik deze vakken als placeholders voor exterieur, interieur, plattegrond en montagefoto’s zodra die beschikbaar zijn.',en:'Use these blocks as placeholders for exterior, interior, floor plan and assembly photos once available.'},
+g1t:{nl:'Exterieur',en:'Exterior'},
+g1d:{nl:'Voorgevel en situering op perceel.',en:'Front elevation and site positioning.'},
+g2t:{nl:'Interieur',en:'Interior'},
+g2d:{nl:'Leefruimte, keuken en daglichtkwaliteit.',en:'Living area, kitchen and daylight quality.'},
+g3t:{nl:'Plattegrond',en:'Floor plan'},
+g3d:{nl:'Duidelijke indeling per modelvariant.',en:'Clear layout per model variant.'},
+g4t:{nl:'Transport',en:'Transport'},
+g4d:{nl:'Flat Pack levering en logistieke aanpak.',en:'Flat Pack delivery and logistics approach.'},
+g5t:{nl:'Montage',en:'Assembly'},
+g5d:{nl:'Stapsgewijze opbouw op locatie.',en:'Step-by-step on-site setup.'},
+g6t:{nl:'Jouw referentiebeelden toevoegen?',en:'Ready to add your own references?'},
+g6d:{nl:'Wij helpen je de juiste beeldset te kiezen voor een sterkere aanvraag.',en:'We help you choose the right image set for a stronger inquiry.'},
 estTitle:{nl:'House Price Estimator',en:'House Price Estimator'},
 estLead:{nl:'Deze tool geeft een indicatieve prijsvork. Geen contractofferte, wel een goede start voor je aanvraag.',en:'This tool gives an indicative price range. It is not a contract quote, but a practical start for your inquiry.'},
 estResultLabel:{nl:'Indicatieve prijsvork',en:'Indicative price range'},
