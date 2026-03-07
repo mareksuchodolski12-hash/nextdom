@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+  <title id="title">Project image placeholder</title>
+  <desc id="desc">Replace this placeholder with a real project photo.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#e8efef"/>
+      <stop offset="100%" stop-color="#d9e5e4"/>
+    </linearGradient>
+  </defs>
+  <rect width="1600" height="900" fill="url(#bg)"/>
+  <rect x="70" y="70" width="1460" height="760" rx="18" ry="18" fill="none" stroke="#9fb7b5" stroke-width="6" stroke-dasharray="14 12"/>
+  <g fill="#355d5b" font-family="Segoe UI, Arial, sans-serif" text-anchor="middle">
+    <text x="800" y="420" font-size="62" font-weight="700">IMAGE PLACEHOLDER</text>
+    <text x="800" y="490" font-size="34">Replace with exterior / interior / plan / transport / assembly photo</text>
+  </g>
+</svg>
