@@ -18,6 +18,11 @@
   const requestedLang = params.get('lang');
   const storedLang = getStoredLang();
   const lang = allowedLangs.has(requestedLang) ? requestedLang : (allowedLangs.has(storedLang) ? storedLang : 'nl');
+  const isRenderableCopy = (value) => {
+    if (typeof value !== 'string') return false;
+    const trimmed = value.trim();
+    return !!trimmed && !/^#{1,6}\s*$/.test(trimmed);
+  };
   document.documentElement.lang = lang;
   setStoredLang(lang);
 
@@ -34,13 +39,13 @@
   document.querySelectorAll('[data-i18n]').forEach((el) => {
     const key = el.dataset.i18n;
     const dict = window.PAGE_I18N?.[key];
-    if (dict && dict[lang]) el.textContent = dict[lang];
+    if (dict && isRenderableCopy(dict[lang])) el.textContent = dict[lang];
   });
 
   document.querySelectorAll('[data-i18n-html]').forEach((el) => {
     const key = el.dataset.i18nHtml;
     const dict = window.PAGE_I18N?.[key];
-    if (dict && dict[lang]) el.innerHTML = dict[lang];
+    if (dict && isRenderableCopy(dict[lang])) el.innerHTML = dict[lang];
   });
 
   document.querySelectorAll('[data-nav-key]').forEach((a) => {
