@@ -41,7 +41,7 @@
 
 - Logo/brand assets (header + favicon).
 - Dane kontaktowe widoczne na `contact.html` (telefon, WhatsApp, godziny kontaktu).
-- Finalne dane kontaktowe i rejestrowe (KvK/VAT/adres).
+- Finalne dane kontaktowe i rejestrowe (BTW/VAT/adres).
 - Finalna polityka prywatności (`privacy.html`).
 - Finalne ceny i mnożniki w estimatorze (`assets/calculator-config.js`).
 - Finalne zdjęcia (z prawami/licencją) zamiast obecnych placeholderów/inspiracji.

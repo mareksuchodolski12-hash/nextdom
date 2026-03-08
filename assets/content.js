@@ -10,18 +10,18 @@ window.NEXTDOM_CONTENT = {
   },
   footer: {
     line1: {
-      nl: 'NEXTDOM is een commerciële merkpartner voor de Nederlandse markt met productbasis van MTB Modules.',
-      en: 'NEXTDOM is a commercial partner brand for the Dutch market with system sourcing from MTB Modules.'
+      nl: 'NEXTDOM is een commerciële merkpartner voor de Belgische markt met productbasis van MTB Modules.',
+      en: 'NEXTDOM is a commercial partner brand for the Belgian market with system sourcing from MTB Modules.',
     },
     line2: {
-      nl: 'Plaatsaanduiding: [Company name], [KvK], [BTW], [Adres], Netherlands',
+      nl: 'Plaatsaanduiding: NEXTDOM, BTW: BE0713623753, Tel: 0493 691 950, België',
       en: 'Placeholder details: [Company name], [Business ID], [VAT], [Address], Netherlands'
     }
   },
   home: {
     heroTitle: {
-      nl: 'Modulair wonen, helder uitgelegd voor de Nederlandse markt.',
-      en: 'Modular living, clearly presented for the Dutch market.'
+      nl: 'Modulair wonen, helder uitgelegd voor de Belgische markt.',
+      en: 'Modular living, clearly presented for the Belgian market.'
     },
     heroLead: {
       nl: 'NEXTDOM helpt je bij het kiezen van een Flat Pack woningconcept: van eerste oriëntatie en prijsindicatie tot een concrete aanvraag.',
