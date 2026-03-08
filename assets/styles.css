@@ -128,6 +128,15 @@ textarea:focus-visible {
   border-radius: var(--radius);
   padding: 1.15rem;
 }
+.resource-list { display: grid; gap: .65rem; margin-top: .75rem; }
+.resource-link {
+  display: inline-flex;
+  align-items: center;
+  gap: .45rem;
+  font-size: .94rem;
+  color: var(--accent);
+}
+.resource-link:hover { text-decoration: underline; }
 
 .card h3 { margin:.35rem 0; font-size:1.06rem; }
 .small { font-size:.93rem; color:var(--muted); }
